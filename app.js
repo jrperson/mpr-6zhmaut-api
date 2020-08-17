@@ -2,7 +2,6 @@ const express = require("express")
 const morgan = require("morgan")
 const bodyParser = require("body-parser")
 const async = require("async")
-const puppeteer = require('puppeteer')
 
 const app = express()
 
@@ -158,7 +157,7 @@ connection.on("open", () => {
 		})()
 
 		queryControllers()
-		
+
 		async.until(
 			callback => { callback(null, !!zones[req.zone]) },
 			callback => { setTimeout(callback, 10) },
